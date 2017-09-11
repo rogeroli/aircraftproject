@@ -1,0 +1,44 @@
+﻿@model IEnumerable<AircraftControlProject.Models.Aircraft>
+
+@{
+    ViewBag.Title = "Aeronaves Ativas";
+}
+
+<h2>Aeronaves Ativas</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <label>Prefixo</label>
+        </th>
+        <th>
+            <label>Modelo</label>
+        </th>
+        <th>
+            <label>Peso máximo de partida</label>
+        </th>
+        <th>
+            <label>Peso máximo de pouso</label>
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr> 
+        <td>
+            @Html.DisplayFor(modelItem => item.PREFIX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AircraftModel.CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAX_DEPARTURE_WEIGHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAX_LANDING_WEIGHT)
+        </td>
+       
+    </tr>
+}
+
+</table>

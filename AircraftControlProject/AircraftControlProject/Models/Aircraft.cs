@@ -15,8 +15,10 @@ namespace AircraftControlProject.Models
         [StringLength(6)]
         public string PREFIX { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:#,#####0.000#}")]
         public decimal MAX_DEPARTURE_WEIGHT { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:#,#####0.000#}")]
         public decimal MAX_LANDING_WEIGHT { get; set; }
 
         public bool ACTIVE { get; set; }

@@ -22,6 +22,21 @@ namespace AircraftControlProject.Controllers
             return View(await aircraft.ToListAsync());
         }
 
+        // GET: Aircrafts actives
+        public async Task<ActionResult> Actives(){
+            string query = "SELECT AIRCRAFT_ID, PREFIX, MAX_DEPARTURE_WEIGHT, MAX_LANDING_WEIGHT, ACTIVE, AIRCRAFT_MODEL_ID FROM Aircraft WHERE ACTIVE = 1";
+            IEnumerable<Aircraft> aircrafts = db.Aircraft.SqlQuery(query);
+            return View(aircrafts);
+        }
+
+        // GET: Aircrafts not actives
+        public async Task<ActionResult> NotActives()
+        {
+            string query = "SELECT AIRCRAFT_ID, PREFIX, MAX_DEPARTURE_WEIGHT, MAX_LANDING_WEIGHT, ACTIVE, AIRCRAFT_MODEL_ID FROM Aircraft WHERE ACTIVE = 0";
+            IEnumerable<Aircraft> aircrafts = db.Aircraft.SqlQuery(query);
+            return View(aircrafts);
+        }
+
         // GET: Aircraft/Details/5
         public async Task<ActionResult> Details(int? id)
         {

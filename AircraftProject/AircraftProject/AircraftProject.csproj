@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2B1AF0EB-7F3B-4F27-9A2C-AC5C0B2AD83B}</ProjectGuid>
+    <ProjectGuid>{9C625677-B4CA-4D00-B1D2-36389E6D94BA}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AircraftControlProject</RootNamespace>
-    <AssemblyName>AircraftControlProject</AssemblyName>
+    <RootNamespace>AircraftProject</RootNamespace>
+    <AssemblyName>AircraftProject</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -150,14 +150,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AircraftController.cs" />
-    <Compile Include="Controllers\AircraftModelsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Aircraft.cs" />
-    <Compile Include="Models\AircraftModel.cs" />
-    <Compile Include="Models\ModeloDeDados.cs" />
+    <Compile Include="Models\Model1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -194,18 +191,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Aircraft\Create.cshtml" />
-    <Content Include="Views\Aircraft\Delete.cshtml" />
-    <Content Include="Views\Aircraft\Details.cshtml" />
-    <Content Include="Views\Aircraft\Edit.cshtml" />
-    <Content Include="Views\Aircraft\Index.cshtml" />
-    <Content Include="Views\AircraftModels\Create.cshtml" />
-    <Content Include="Views\AircraftModels\Delete.cshtml" />
-    <Content Include="Views\AircraftModels\Details.cshtml" />
-    <Content Include="Views\AircraftModels\Edit.cshtml" />
-    <Content Include="Views\AircraftModels\Index.cshtml" />
-    <Content Include="Views\Aircraft\Actives.cshtml" />
-    <Content Include="Views\Aircraft\NotActives.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -239,9 +227,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50596</DevelopmentServerPort>
+          <DevelopmentServerPort>50568</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50596/</IISUrl>
+          <IISUrl>http://localhost:50568/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
