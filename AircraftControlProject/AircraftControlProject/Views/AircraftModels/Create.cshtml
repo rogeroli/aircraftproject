@@ -1,0 +1,65 @@
+﻿@model AircraftControlProject.Models.AircraftModel
+
+@{
+    ViewBag.Title = "Cadastro de Modelo de Aeronaves";
+}
+
+<h2>Modelo de Aeronave</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Cadastro</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+                <label class="control-label col-md-5">Código</label>
+                <div class="col-md-14">
+                    @Html.EditorFor(model => model.CODE, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CODE, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-5">Código Alternativo</label>
+            <div class="col-md-14">
+                @Html.EditorFor(model => model.ALTERNATIVE_CODE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ALTERNATIVE_CODE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-5">Peso máximo de partida</label>
+            <div class="col-md-14">
+                @Html.EditorFor(model => model.MAX_DEPARTURE_WEIGHT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MAX_DEPARTURE_WEIGHT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-5">Peso máximo de pouso</label>
+            <div class="col-md-14">
+                @Html.EditorFor(model => model.MAX_LANDING_WEIGHT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MAX_LANDING_WEIGHT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-5 col-md-5">
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
+            </div>
+        </div>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Listar Modelos", "Index", null, new { @class = "btn btn-default btn-sm" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

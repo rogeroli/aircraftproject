@@ -1,0 +1,50 @@
+﻿@model AircraftControlProject.Models.AircraftModel
+
+@{
+    ViewBag.Title = "Modelo de Aeronave";
+}
+
+<h2>Visualizar</h2>
+
+<div>
+    <h4>Modelo de Aeronave</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Código</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODE)
+        </dd>
+
+        <dt>
+            <label>Código alternativo</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ALTERNATIVE_CODE)
+        </dd>
+
+        <dt>
+            <label>Peso máximo de partida</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAX_DEPARTURE_WEIGHT)
+        </dd>
+
+        <dt>
+            <label>Peso máximo de pouso</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAX_LANDING_WEIGHT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.AIRCRAFT_MODEL_ID }) |
+    @Html.ActionLink("Listar Modelos", "Index")
+</p>

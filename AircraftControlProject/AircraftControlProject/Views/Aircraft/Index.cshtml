@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AircraftControlProject.Models.Aircraft>
+
+@{
+    ViewBag.Title = "Aeronaves";
+}
+
+<h2>Aeronaves</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <label>Prefixo</label>
+        </th>
+        <th>
+            <label>Modelo</label>
+        </th>
+        <th>
+            <label>Peso máximo de partida</label>
+        </th>
+        <th>
+            <label>Peso máximo de pouso</label>
+        </th>
+        <th>
+            <label>Ativo</label>
+        </th>
+        <th>
+            <label>Ações</label>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr> 
+        <td>
+            @Html.DisplayFor(modelItem => item.PREFIX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AircraftModel.CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAX_DEPARTURE_WEIGHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAX_LANDING_WEIGHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.AIRCRAFT_ID }) |
+            @Html.ActionLink("Visualizar", "Details", new { id=item.AIRCRAFT_ID }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.AIRCRAFT_ID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div class="form">
+    @Html.ActionLink("Cadastrar Aeronave", "Create", null, new { @class = "btn btn-success" })
+</div>

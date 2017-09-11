@@ -1,0 +1,51 @@
+﻿@model AircraftControlProject.Models.AircraftModel
+
+@{
+    ViewBag.Title = "Modelo de Aeronaves";
+}
+<h3>Você deseja Deletar este item?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+             <label>Código</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CODE)
+        </dd>
+
+        <dt>
+            <label>Código alternativo</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ALTERNATIVE_CODE)
+        </dd>
+
+        <dt>
+            <label>Peso máximo de partida</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAX_DEPARTURE_WEIGHT)
+        </dd>
+
+        <dt>
+            <label>Peso máximo de pouso</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAX_LANDING_WEIGHT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Listar Modelos", "Index")
+        </div>
+    }
+</div>

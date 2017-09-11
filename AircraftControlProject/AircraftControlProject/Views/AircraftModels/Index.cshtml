@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AircraftControlProject.Models.AircraftModel>
+
+@{
+    ViewBag.Title = "Modelos de Aeronaves";
+}
+
+<h2>Modelos de Aeronaves</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            <label>Código</label>
+        </th>
+        <th>
+            <label>Código Alternativo</label>
+        </th>
+        <th>
+            <label>Peso máximo de partida</label>
+        </th>
+        <th>
+           <label>Peso máximo de pouso</label>
+        </th>
+        <th>
+            <label>Ações</label>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ALTERNATIVE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAX_DEPARTURE_WEIGHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAX_LANDING_WEIGHT)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.AIRCRAFT_MODEL_ID }) |
+            @Html.ActionLink("Visualizar", "Details", new { id=item.AIRCRAFT_MODEL_ID }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.AIRCRAFT_MODEL_ID })
+        </td>
+    </tr>
+}
+</table>
+
+<div class="form">
+    @Html.ActionLink("Cadastrar Modelo", "Create", null, new { @class = "btn btn-success" })
+</div>
